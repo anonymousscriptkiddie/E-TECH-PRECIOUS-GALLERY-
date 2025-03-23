@@ -1,0 +1,932 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+    <title>PRECIOUS GALLERY</title>
+    <style>
+        /* Global cyberpunk styles */
+        
+        body {
+            background-image: url("6604090.gif");
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            font-family: 'Orbitron', sans-serif;
+            /* A futuristic font, include via Google Fonts if desired */
+            color: #fff;
+            margin: 0;
+            padding: 0;
+        }
+        
+        html {
+            height: 100%;
+        }
+        /* Neon glow animation for header */
+        
+        @keyframes neonGlow {
+            0%,
+            100% {
+                text-shadow: 0 0 5px #ff00ff, 0 0 10px #ff00ff, 0 0 20px #ff00ff;
+            }
+            50% {
+                text-shadow: 0 0 10px #ff00ff, 0 0 20px #ff00ff, 0 0 30px #ff00ff;
+            }
+        }
+        
+        header {
+            background-color: rgba(0, 0, 0, 0.85);
+            padding: 20px;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.7);
+        }
+        
+        header h1 {
+            margin: 0;
+            font-size: 2.5rem;
+            animation: neonGlow 2s ease-in-out infinite;
+            color: #ff00ff;
+        }
+        
+        .gallery {
+            background-image: url("leopard-skin-pink-seamless-pattern-vector.jpg");
+        }
+        
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 20px 0 0;
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+        }
+        
+        nav ul li {
+            margin: 0;
+        }
+        
+        #contact {
+            background-image: url("leo.jpg");
+        }
+        
+        nav ul li a {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #00ffff;
+            color: #000;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1rem;
+            border-radius: 5px;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+            box-shadow: 0 0 10px #00ffff;
+        }
+        
+        nav ul li a:hover {
+            background-color: #00a3a3;
+            transform: translateY(-3px);
+        }
+        /* Cyberpunk animated border for the clooned container */
+        
+        @keyframes borderGlow {
+            0%,
+            100% {
+                border-color: #ff00ff;
+                box-shadow: 0 0 10px #ff00ff;
+            }
+            50% {
+                border-color: #00ffff;
+                box-shadow: 0 0 20px #00ffff;
+            }
+        }
+        
+        .text-content {
+            float: right;
+            width: 50%;
+        }
+        
+        .clooned-container {
+            width: 50%;
+            max-width: 500px;
+            position: absolute;
+            left: 10px;
+            float: left;
+            top: 20px;
+            padding: 10px;
+            box-sizing: border-box;
+            border: 5px solid;
+            animation: borderGlow 3s infinite;
+            background-image: url("9586846990183c06e768204cd0593eee.gif");
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            position: relative;
+            /* For any future pseudo-elements */
+            z-index: 1;
+        }
+        /* About Me Section Styling */
+        
+        .about-me {
+            position: relative;
+            font-size: 20px;
+            margin: 20px;
+            text-align: center;
+            background-color: white;
+            color: rgba(0, 0, 0, 0.9);
+            text-shadow: 2px 2px 5px red;
+            padding: 20px;
+            border-radius: 10px;
+            /* A subtle animation to change background color */
+            animation: bgPulse 5s infinite alternate;
+        }
+        
+        @keyframes bgPulse {
+            from {
+                background-color: rgba(243, 242, 240, 0.8);
+            }
+            to {
+                background-color: rgba(236, 235, 232, 0.8);
+            }
+        }
+        /* Section Tiles, Gallery, Footer, etc. (kept unchanged) */
+        
+        .tile {
+            padding: 20px;
+            margin: 20px auto;
+            max-width: 800px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border: 1px solid #ddd;
+        }
+        
+        .tile:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+        }
+        
+        footer {
+            text-align: center;
+            padding: 15px;
+            background-color: rgba(44, 62, 80, 0.9);
+            color: #fff;
+            width: 100%;
+            margin-top: 20px;
+            box-shadow: 0 -4px 6px rgba(0, 0, 0, 0.1);
+        }
+        
+        .gallery {
+            background-image: url("pinkcyber.avif");
+        }
+        
+        .gallery-container {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 15px;
+            background-image: url("pinkcyber.avif");
+        }
+        
+        .gallery-item {
+            border: 1px solid #ddd;
+            padding: 10px;
+            text-align: center;
+            background-color: #f9f9f9;
+            border-radius: 10px;
+            overflow: hidden;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .gallery-item:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        }
+        
+        .gallery-item img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+            transition: transform 0.3s ease;
+        }
+        
+        .gallery-item img:hover {
+            transform: scale(1.1);
+        }
+        
+        .hidden {
+            display: none;
+        }
+        
+        #about p {
+            font-size: 1.1rem;
+            color: #555;
+        }
+        
+        #contact ul {
+            list-style: none;
+            padding: 0;
+        }
+        
+        #contact ul li {
+            margin: 10px 0;
+        }
+        
+        #contact ul li a {
+            color: #1abc9c;
+            text-decoration: none;
+            font-weight: bold;
+            transition: color 0.3s ease;
+        }
+        
+        #contact ul li a:hover {
+            color: #16a085;
+        }
+        
+        diva {
+            width: 100px;
+            height: 100px;
+            position: relative;
+            animation-name: example;
+            animation-duration: 4s;
+            animation-iteration-count: infinite;
+        }
+        
+        @keyframes example {
+            0% {
+                background-color: red;
+                left: 0px;
+                top: 0px;
+            }
+            25% {
+                background-color: yellow;
+                left: 200px;
+                top: 0px;
+            }
+            50% {
+                background-color: blue;
+                left: 200px;
+                top: 200px;
+            }
+            75% {
+                background-color: green;
+                left: 0px;
+                top: 200px;
+            }
+            100% {
+                background-color: red;
+                left: 0px;
+                top: 0px;
+            }
+        }
+        
+        .heady {
+            background-image: url("R.png");
+        }
+        
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        
+        body {
+            background-color: #000;
+        }
+        
+        .lights {
+            --color-1: 255, 249, 82;
+            --color-2: 0, 234, 255;
+            --color-3: 247, 0, 148;
+            display: flex;
+            justify-content: center;
+            flex-flow: wrap;
+            gap: 30px 40px;
+            padding: 30px 0;
+            overflow: hidden;
+            pointer-events: none;
+        }
+        
+        .lights li {
+            flex: none;
+            position: relative;
+            list-style: none;
+            width: 15px;
+            height: 30px;
+            border-radius: 50%;
+        }
+        
+        .lights li:before {
+            position: absolute;
+            content: "";
+            top: -5px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 10px;
+            height: 10px;
+            background-color: #222;
+            border-radius: 100%;
+        }
+        
+        .lights li:after {
+            position: absolute;
+            content: "";
+            z-index: -1;
+            top: -2px;
+            left: 50%;
+            width: 54px;
+            height: 1px;
+            border-bottom: 1px solid #222;
+            border-radius: 100%;
+        }
+        
+        .lights li:last-child:after {
+            display: none;
+        }
+        
+        .lights li {
+            background-color: rgba(var(--color-1), 1);
+            box-shadow: 0 5px 24px 3px rgba(var(--color-1), 1);
+            animation: lighting-1 1.25s infinite linear;
+        }
+        
+        @keyframes lighting-1 {
+            50% {
+                background-color: rgba(var(--color-1), 0.25);
+                box-shadow: 0 5px 24px 3px rgba(var(--color-1), 0.25);
+            }
+        }
+        
+        .lights li:nth-child(odd) {
+            /* 1, 3, 5, ... */
+            background-color: rgba(var(--color-2), 1);
+            box-shadow: 0 5px 24px 3px rgba(var(--color-2), 0.8);
+            animation: lighting-2 1.5s infinite linear;
+        }
+        
+        @keyframes lighting-2 {
+            50% {
+                background-color: rgba(var(--color-2), 0.4);
+                box-shadow: 0 5px 24px 3px rgba(var(--color-2), 0.3);
+            }
+        }
+        
+        .lights li:nth-child(4n+2) {
+            /* 2, 6, 10, 14, ... */
+            background-color: rgba(var(--color-3), 1);
+            box-shadow: 0 5px 24px 3px rgba(var(--color-3), 1);
+            animation: lighting-3 1.5s infinite linear;
+            animation-delay: 1.25s;
+        }
+        
+        @keyframes lighting-3 {
+            50% {
+                background-color: rgba(var(--color-3), 0.25);
+                box-shadow: 0 5px 24px 3px rgba(var(--color-3), 0.25);
+            }
+        }
+        
+        .heady {
+            height: 210px;
+        }
+        
+        .out {
+            background-image: url("573c8f69e15f1ed94d4bbfcd360982e6.png");
+            background-repeat: no-repeat;
+        }
+        
+        .cast {
+            z-index: 1;
+            width: 50px;
+            height: 50px;
+            position: absolute;
+            bottom: 0;
+            background-color: orange;
+        }
+        
+        .castle {
+            position: relative;
+            display: block;
+            float: 6% right;
+        }
+        
+        .txt {
+            text-align: right;
+            align-items: center;
+            justify-content: flex-end;
+            padding-right: 50px;
+            margin: 0
+        }
+        
+        #typing-text {
+            font-size: 20px;
+            white-space: pre-line;
+            /* Preserves line breaks */
+            text-align: left;
+            display: inline-block;
+        }
+        
+        #ferris {
+            width: 80vh;
+            height: 80vh;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+        
+        #wheel {
+            width: 75%;
+            height: 75%;
+            position: absolute;
+            top: 5%;
+            left: 50%;
+            transform: translateX(-50%);
+            border-radius: 50%;
+        }
+        
+        #wheel0 {
+            box-sizing: border-box;
+            width: 100%;
+            height: 100%;
+            border: 0.5vh solid #404041;
+            border-radius: 50%;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+        
+        #wheel1 {
+            box-sizing: border-box;
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            border: 1.5vh solid #00adef;
+            border-radius: 50%;
+        }
+        
+        #wheel2 {
+            box-sizing: border-box;
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            border: 1vh solid #2c7ec1;
+            border-radius: 50%;
+        }
+        
+        #wheel3 {
+            box-sizing: border-box;
+            width: 60%;
+            height: 60%;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            border: 2vh solid #2c7ec1;
+            border-radius: 50%;
+        }
+        
+        #wheel4 {
+            box-sizing: border-box;
+            width: 95%;
+            height: 95%;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            border: 0.5vh solid #00adef;
+            border-radius: 50%;
+        }
+        
+        #wheel5 {
+            box-sizing: border-box;
+            width: 50%;
+            height: 50%;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: #2c7ec1;
+            border-radius: 50%;
+        }
+        
+        #wheel6 {
+            box-sizing: border-box;
+            width: 92%;
+            height: 92%;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: #00adef;
+            border-radius: 50%;
+        }
+        
+        #wheel7 {
+            box-sizing: border-box;
+            width: 80%;
+            height: 80%;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: #58585b;
+            border-radius: 50%;
+        }
+        
+        #stand {
+            position: absolute;
+            top: 42%;
+            height: 80%;
+            width: 80%;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: #58585b;
+            clip-path: polygon(50% 0%, 100% 100%, 92% 100%, 50% 8%, 8% 100%, 0% 100%);
+        }
+        
+        #base {
+            width: 100%;
+            height: 1vh;
+            position: absolute;
+            bottom: -22%;
+            background-color: #484848;
+        }
+        
+        #wheel8 {
+            box-sizing: border-box;
+            width: 12%;
+            height: 12%;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: #6d6e70;
+            border-radius: 50%;
+        }
+        
+        .spoke {
+            height: 95%;
+            width: 2%;
+            background-color: #ffffff;
+            position: absolute;
+            left: 49%;
+            top: 2%;
+        }
+        
+        .seat {
+            width: 10%;
+            height: 20%;
+        }
+        
+        .clip {
+            width: 100%;
+            height: 40%;
+            background-color: #f05a28;
+            clip-path: polygon(50% 0%, 100% 100%, 85% 100%, 50% 25%, 15% 100%, 0% 100%);
+        }
+        
+        .box {
+            box-sizing: border-box;
+            width: 100%;
+            height: 60%;
+            border: 1vh solid #f7931d;
+            position: relative;
+        }
+        
+        .door0 {
+            width: 100%;
+            position: absolute;
+            top: 50%;
+            height: 50%;
+            background-color: #f7931d;
+        }
+        
+        .door1 {
+            width: 100%;
+            position: absolute;
+            top: 50%;
+            height: 50%;
+            width: 50%;
+            background-color: #f05a28;
+        }
+        
+        .seat {
+            position: absolute;
+            transform: translateX(-50%);
+        }
+        
+        .container {
+            position: relative;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 20px;
+        }
+        
+        h1 {
+            font-size: 3em;
+            text-shadow: 0 0 10px #ff66b2;
+            animation: glow 1.5s infinite alternate;
+        }
+        
+        @keyframes glow {
+            0% {
+                text-shadow: 0 0 10px #ff66b2, 0 0 20px #ff99cc;
+            }
+            100% {
+                text-shadow: 0 0 15px #ff99cc, 0 0 25px #ff66b2;
+            }
+        }
+        
+        .profile-card {
+            background: rgba(255, 102, 178, 0.2);
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow: 0 0 15px #ff66b2;
+            width: 350px;
+            text-align: center;
+            backdrop-filter: blur(10px);
+            margin: 20px 0;
+        }
+        
+        .profile-card img {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            border: 3px solid #ff66b2;
+            box-shadow: 0 0 10px #ff99cc;
+            margin-bottom: 10px;
+        }
+        
+        .profile-card h2 {
+            margin-bottom: 10px;
+        }
+        
+        .profile-card p {
+            margin: 5px 0;
+        }
+        
+        .buttons {
+            margin-top: 15px;
+        }
+        
+        .neon-button {
+            padding: 10px 15px;
+            border: 2px solid #ff66b2;
+            background: transparent;
+            color: #ff66b2;
+            font-size: 1em;
+            cursor: pointer;
+            transition: 0.3s;
+            margin: 5px;
+            border-radius: 5px;
+        }
+        
+        .neon-button:hover {
+            background: #ff66b2;
+            color: black;
+            box-shadow: 0 0 15px #ff99cc;
+        }
+    </style>
+</head>
+
+<body>
+    <!--automatic music for my website-->
+    <audio src="not.mp3"></audio>
+
+
+
+    <header class="heady">
+        <ul class="lights">
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+
+        </ul>
+        <h1>
+
+
+            Precious Candy Prado</h1>
+        <nav class="leo">
+            <ul>
+                <li><a href="#about" onclick="showSection('about')">About Me</a></li>
+                <li><a href="#contact" onclick="showSection('contact')">Contact & Social Media</a></li>
+                <li><a href="#gallery" onclick="showSection('gallery')">Photo Gallery</a></li>
+                <li><a href="comments" onclick="window.open('commentsection.html', '_blank')"> Write a comment</a></li>
+                <li><a href="pictures" onclick="window.open('ex.html', '_blank')"> My Photos</a></li>
+            </ul>
+        </nav>
+    </header>
+
+
+    <div class="txt">
+        <p style="direction: rtl;"></p>
+    </div>
+    <!-- Include the clooned script -->
+    <div id="clooned-3d-model" data-src="your-model.glb" data-autospin="true" data-speed="1" data-infinite="true">
+        <script src="https://clooned.com/wp-content/uploads/cloons/scripts/clooned.js"></script>
+        <!-- Container for the 3D model -->
+    </div>
+
+    <div class="out">
+        <div class="clooned-container">
+            <clooned-object features="lsc;dt;fs" oid="58f6c8eb4a7a47e397e8662d36c66ac8"></clooned-object>
+        </div>
+    </div>
+    <!--heart anim-->
+    <section id="comments" class="tile hidden">
+        <div id="respond">
+            <h3>Leave A Response</h3>
+            <p>Your email address will not be published with your comments.</p>
+            <form id="commentForm" method="post" class="cmxform">
+                <div class="commentfields">
+                    <label class="name">Name <span>*</span></label>
+                    <input name="name" id="cname" class="comment-input required" type="text">
+                </div>
+                <div class="commentfields">
+                    <label class="email">Email <span>*</span></label>
+                    <input name="email" id="cemail" class="comment-input required email" type="text">
+                </div>
+                <div class="commentfields">
+                    <label class="website">Website</label>
+                    <input name="website" class="comment-input" type="text">
+                </div>
+                <div class="commentfields">
+                    <label>Comments <span>*</span></label>
+                    <textarea id="ccomment" class="comment-textarea required" name="comment"></textarea>
+                </div>
+                <div class="commentfields">
+                    <input class="commentbtn" type="submit" value="Post Comment">
+                </div>
+            </form>
+        </div>
+        </div>
+    </section>
+
+    <!-- About Me Section -->
+    <div class="diva"> my hobbies</div>
+    <div class="about-me">
+        <h6>ABOUT ME</h6>
+        <p style="font-family: Brush Script MT, Brush Script Std, cursive; font-size: 30px;">
+            Hello, my name is Precious Candy Abillonar Prado. I'm a Senior High School Grade 11 student with a passion for exploring languages and connecting with people from around the world. Ever since I was very little, I've been fascinated with learning languages
+            and reading.<br> At 12, I discovered Arduino, which opened my eyes to computer programming and electronics—sparking a lifelong love for mathematics, my favorite subject. I also enjoy creative hobbies like playing with dolls and
+            sewing adorable coquette dresses for them.<br> I'm inspired by authors such as Mary Shelley and Taylor Caldwell, and I love listening to Russian and French songs. My interests extend into the world of horror and gothic aesthetics, and I find
+            joy in playing Sims 4, playing the ukulele and flute,<br> skating, painting with gouache in my little sketchbook, practicing calligraphy, and even experimenting with cyberpunk aesthetics.<br> Writing is a constant in my life. I not only keep
+            a diary to capture my thoughts and dreams, but I also write about my nightmares, transforming them into stories that help me express my deepest emotions.<br> I invite you to explore my portfolio gallery and join me on this exciting journey
+            of learning, creativity, and self-expression.
+        </p>
+        <!-- Contact & Social Media Section -->
+        <section id="contact" class="tile hidden">
+            <h2>Contact & Social Media</h2>
+            <p>If you'd like to connect with me, feel free to reach out via email or follow me on social media:</p>
+            <ul>
+                <li>Email: <a href="mailto:your.email@example.com">preciouscandyprado@goodsam.edu.ph</a></li>
+                <li>Instagram: <a href="https://instagram.com/yourprofile">@prscdy678</a></li>
+                <li>Youtube: <a href="https://www.youtube.com/@candy7333">candy7333</a></li>
+                <li>LinkedIn: <a href="https://linkedin.com/in/yourprofile">Your Name</a></li>
+            </ul>
+
+        </section>
+        <div class="container">
+            <h1>Prexcious' Coquette Cyberpunk Profile</h1>
+            <div class="profile-card">
+                <img src="Screenshot 2025-03-23 200525.png" alt="Profile Picture">
+                <h2>About Me</h2>
+                <p><strong>Name:</strong> Prexcious</p>
+                <p><strong>Age:</strong> 16</p>
+                <p><strong>Location:</strong> Barangay Bago, General Tinio, Nueva Ecija, Philippines</p>
+                <h2>Hobbies</h2>
+                <p>Coding | Calligraphy | Acting | Scrabble | Books | Electronics | Arduino</p>
+                <div class="buttons">
+                    <button class="neon-button" onclick="alert('More about my coding projects coming soon!')">Coding</button>
+                    <button class="neon-button" onclick="alert('Exploring calligraphy styles!')">Calligraphy</button>
+                    <button class="neon-button" onclick="alert('Acting performances loading...')">Acting</button>
+                    <button class="neon-button" onclick="alert('Lets play Scrabble!')">Scrabble</button>
+                </div>
+            </div>
+            <div class="profile-card">
+                <h2>More Info</h2>
+                <p>This is a test section to ensure scrolling works!</p>
+            </div>
+        </div>
+        <!-- Photo Gallery Section -->
+        <section id="gallery" class="tile hidden">
+            <h2>Photo Gallery</h2>
+            <div class="gallery-container">
+                <div class="gallery-item"><img src="485470560_856077153319006_5085476708029074997_n.jpg" alt="photo1"></div>
+                <div class="gallery-item"><img src="483911011_1281688492929165_1228487721966868426_n.jpg" alt="photo2"></div>
+                <div class="gallery-item"><img src="483889412_1785771201990747_8830959694095705122_n.jpg" alt="photo3"></div>
+                <div class="gallery-item"><img src="484213740_679499424510668_4454581039173924319_n.jpg" alt="Photo 4"></div>
+                <div class="gallery-item"><img src="sister.png" alt="Photo 5"></div>
+                <div class="gallery-item"><img src="" alt="Photo 6"></div>
+                <div class="scene">
+
+                </div>
+
+
+        </section>
+
+        </div>
+
+        <div id="videos" class="tile hidden">
+            <h2>My Videos</h2>
+            <!-- Add content related to videos here -->
+        </div>
+        <footer>
+            <p>&copy; 2025 [Precious Candy Abillonar Prado]. All rights reserved.</p>
+        </footer>
+        <script>
+            // JavaScript to toggle sections
+            function showSection(sectionId) {
+                // Hide all sections
+                document.querySelectorAll('section').forEach(section => {
+                    section.classList.add('hidden');
+                });
+                // Show the selected section
+                document.getElementById(sectionId).classList.remove('hidden');
+            }
+            // Show the "About Me" section by default
+            showSection('about');
+
+            // Ensure rotation is applied after the script loads
+            window.onload = function() {
+                let model = document.getElementById("clooned-3d-model");
+                model.setAttribute("data-autospin", "true"); // Enable auto rotation
+                model.setAttribute("data-speed", "1"); // Adjust speed (higher = faster)
+            };
+            window.addEventListener("DOMContentLoaded", event => {
+                const audio = document.querySelector("audio");
+                audio.volume = 0.2;
+                audio.play();
+            });
+            const wheel = document.getElementById("wheel");
+            const imageUrls = [
+                "461289653_533964622555840_1936358580079188004_n.jpg",
+                "461287884_1191354645276545_5974367501316458732_n.jpg",
+                "459210088_1244235586773338_7658354891513660985_n (1).jpg",
+                "https://via.placeholder.com/60/FFFF00",
+                "https://via.placeholder.com/60/FF00FF",
+                "https://via.placeholder.com/60/00FFFF"
+            ];
+
+            const radius = 120;
+            imageUrls.forEach((url, i) => {
+                const angle = (i / imageUrls.length) * (2 * Math.PI);
+                const x = radius * Math.cos(angle) + 150 - 30;
+                const y = radius * Math.sin(angle) + 150 - 30;
+
+                const imgContainer = document.createElement("div");
+                imgContainer.className = "image";
+                imgContainer.style.left = `${x}px`;
+                imgContainer.style.top = `${y}px`;
+
+                const img = document.createElement("img");
+                img.src = url;
+                imgContainer.appendChild(img);
+
+                const spoke = document.createElement("div");
+                spoke.className = "spoke";
+                spoke.style.height = `${radius}px`;
+                spoke.style.transform = `rotate(${(i / imageUrls.length) * 360}deg) translate(0, -50%)`;
+
+                wheel.appendChild(spoke);
+                wheel.appendChild(imgContainer);
+            });
+        </script>
+
+
+</body>
+
+</html>
