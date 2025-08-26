@@ -1,9 +1,19 @@
-# E-TECH-PRECIOUS-GALLERY-
-DONT COPY WITHOUT MY PERMISSION , I AM THE AUTHOR DOES NOT ALLOW ANY INDIVIDUAL TO COPY MY WORK WITHOUT MY PERMISSION: AUTHOR NAME: PRECIOUS CANDY ABILLONAR PRADO
-![Image](https://github.com/user-attachments/assets/c1f0b8a2-57ef-46a3-8ba7-bd45759075ef)
-![Image](https://github.com/user-attachments/assets/99c1e6c7-edae-4c6a-8699-a81ae50b0547)
-![Image](https://github.com/user-attachments/assets/e5f4684b-8f94-4983-9895-ee1f3ebc9f9f)
-![Image](https://github.com/user-attachments/assets/9f345aef-9c0e-47e4-8ed7-5222fb2a7b67)
-![Image](https://github.com/user-attachments/assets/15877895-9612-41bf-9d29-affa9852efbf)
-![Image](https://github.com/user-attachments/assets/9f8bf357-9945-43ad-9368-5c65f7e89adb)
-https://e-tech-precious-gallery.vercel.app/
+# preciousgalleryetech
+Kindly open the code into a compiler or integrated development environment in case it has an error into a deployment
+This project is done by the help and advice of some international website developers online BUT IN SPITE OF THAT (IT WAS ALL CODED BY ME)
+NOTE THAT: 
+I MYSELF DOESNT ALLOW ANY INDIVIDUALS TO COPY MY WORK WITHOUT MY PERMISSION, I THE AUTHOR: PRECIOUS CANDY ABILLONAR PRADO WILL DEFINITELY REPORT SOMEONE ELSE THAT COPY MY WORK EVEN WITH CITATIONS IF NOT GUARANTEED BY MY OWN PERMISSION.
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+THIS CONTAINS THOUSANDS LINE OF CODES AND WAS MADE INSIDE APPROXIMATELY 21 DAYS
+THIS WAS CREATED BY A 16 YEARS OLD GIRL FOR HER EMPOWERMENT TECHNOLOGY PROJECT
+THIS WAS CREATED USING HYPER-TEXT MARKUP LANGUAGE, CASCADING STYLESHEET, JAVASCRIPT, AND PHP, BOOTSTRAP, MEDIA QUERIES. MOREOVER THIS WORK CAN BE PROBABLY UPDATED AS SOON AS POSSIBLE AND SQL DATABASE CAN BE ADDED. 
+LANGUAGE USE: ENGLISH;
+COMPILER AND INTEGRATED DEVELOPMENT USE: VISUAL STUDIO CODE
+DEPLOYMENT USE: VERCEL;
+UI AND UX WAS ALSO DEVELOPED BY ME
+COMMENT SECTION WAS POWERED BY COMMENTO
+![Image](https://github.com/user-attachments/assets/bc25e507-bf17-422c-b571-712b825ba07b)
+![Image](https://github.com/user-attachments/assets/2456b513-3f82-4136-bbb5-f3eb1e7a574f)
+![Image](https://github.com/user-attachments/assets/e78f486a-409d-436a-9871-be46921aeb9f)
+![Image](https://github.com/user-attachments/assets/1da92e6a-f2d1-41c5-a05d-491e88e07a67)
+![Image](https://github.com/user-attachments/assets/7b30125c-3697-46e0-a188-dbdaf10f61e4)

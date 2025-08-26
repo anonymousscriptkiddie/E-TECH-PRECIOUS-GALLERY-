@@ -4,6 +4,11 @@
 <head>
     <title>Add Comments About Me</title>
     <style>
+        .body {
+            background-image: url("OIP.jpg");
+            z-index: 1;
+        }
+        
         #comments {
             max-width: 600px;
             margin: 40px auto;
@@ -54,86 +59,22 @@
             margin: 5px 0;
             border-radius: 5px;
         }
-        
-        .gallery-container {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 15px;
-        }
-        
-        .gallery-item {
-            border: 1px solid #ddd;
-            padding: 10px;
-            text-align: center;
-            background-color: #f9f9f9;
-            border-radius: 10px;
-            overflow: hidden;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-        
-        .gallery-item:hover {
-            transform: scale(1.05);
-            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-        }
-        
-        .gallery-item img {
-            max-width: 100%;
-            height: auto;
-            border-radius: 8px;
-            transition: transform 0.3s ease;
-        }
-        
-        .gallery-item img:hover {
-            transform: scale(1.1);
-        }
     </style>
 </head>
 
-<body>
+<body style="background-image: url('OIP.jpg')">
     <section id="comments">
         <h2>LEAVE A COMMENT OR MESSAGE ABOUT ME</h2>
-        <form id="comment-form">
-            <textarea id="comment-input" placeholder="Write a comment..." required></textarea>
+        <form id="comment-form" action="submit_comment.php" method="POST">
+            <input type="text" name="user_name" placeholder="Your Name" required>
+            <textarea name="comment_text" placeholder="Write a comment..." required></textarea>
             <button type="submit">Post Comment</button>
         </form>
-        <div id="comment-list"></div>
+        <div id="comment-list">
+            <?php include 'display_comments.php'; ?>
+        </div>
     </section>
     <button onclick="window.location.href='index.html'">GO BACK TO HOME</button>
-
-    <script>
-        document.addEventListener("DOMContentLoaded", loadComments);
-
-        document.getElementById("comment-form").addEventListener("submit", function(event) {
-            event.preventDefault();
-            let commentInput = document.getElementById("comment-input");
-            let commentText = commentInput.value.trim();
-
-            if (commentText !== "") {
-                saveComment(commentText);
-                displayComment(commentText);
-                commentInput.value = ""; // Clear input field
-            }
-        });
-
-        function saveComment(commentText) {
-            let comments = JSON.parse(localStorage.getItem("comments")) || [];
-            comments.push(commentText);
-            localStorage.setItem("comments", JSON.stringify(comments));
-        }
-
-        function loadComments() {
-            let comments = JSON.parse(localStorage.getItem("comments")) || [];
-            comments.forEach(displayComment);
-        }
-
-        function displayComment(commentText) {
-            let commentList = document.getElementById("comment-list");
-            let newComment = document.createElement("div");
-            newComment.classList.add("comment");
-            newComment.textContent = commentText;
-            commentList.appendChild(newComment);
-        }
-    </script>
 
 </body>
 
